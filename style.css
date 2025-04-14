@@ -1,0 +1,291 @@
+/* style.css - Version Complète Finale + Canvas Fleur // Styles généraux */body {
+
+    margin: 0;
+
+    font-family: 'Poppins', sans-serif;
+    
+    color: #fff;
+    
+    overflow: hidden;
+    
+    height: 100vh;
+    
+    display: flex;
+    
+    justify-content: center;
+    
+    align-items: center;
+    
+    position: relative;
+    
+    }/* Fond étoilé */.starry-background {
+    
+    position: absolute;
+    
+    top: 0;
+    
+    left: 0;
+    
+    width: 100%;
+    
+    height: 100%;
+    
+    background-color: #0a0a1a;
+    
+    background-image:
+    
+    radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+    
+    radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px),
+    
+    radial-gradient(circle, rgba(255,255,255,0.6) 2px, transparent 2px);
+    
+    background-size:
+    
+    300px 300px,
+    
+    200px 200px,
+    
+    450px 450px;
+    
+    background-position:
+    
+    0 0,
+    
+    40px 60px,
+    
+    130px 270px;
+    
+    animation: moveStars 150s linear infinite;
+    
+    z-index: 0;
+    
+    }@keyframes moveStars {
+    
+    from { background-position: 0 0, 40px 60px, 130px 270px; }
+    
+    to { background-position: -10000px 5000px, -8000px 3000px, -12000px 9000px; }
+    
+    }/* Conteneur principal */.content-container {
+    
+    position: relative;
+    
+    z-index: 1;
+    
+    display: flex;
+    
+    flex-direction: column;
+    
+    justify-content: center;
+    
+    align-items: center;
+    
+    text-align: center;
+    
+    height: 100%;
+    
+    width: 90%;
+    
+    max-width: 800px;
+    
+    }/* Bouton initial - Violet */#startButton {
+    
+    padding: 15px 30px;
+    
+    font-size: 1.5em;
+    
+    background-color: #8e44ad;
+    
+    color: white;
+    
+    border: none;
+    
+    border-radius: 50px;
+    
+    cursor: pointer;
+    
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.5);
+    
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    z-index: 2;
+    
+    }#startButton:hover {
+    
+    background-color: #a569bd;
+    
+    }/* Animation pulsation bouton */.pulsing {
+    
+    animation: pulse 1.5s infinite ease-in-out;
+    
+    }@keyframes pulse {
+    
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4); }
+    
+    50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(142, 68, 173, 0.7); }
+    
+    }/* Message principal - Glow Violet */#mainMessage {
+    
+    font-family: 'Great Vibes', cursive;
+    
+    font-size: 4.5em;
+    
+    color: #fff;
+    
+    text-shadow: 0 0 8px #fff, 0 0 15px #a569bd, 0 0 20px #a569bd;
+    
+    animation: glowFadeIn 1.5s ease-out forwards;
+    
+    position: relative;
+    
+    z-index: 1;
+    
+    }@keyframes glowFadeIn {
+    
+    from { opacity: 0; transform: scale(0.8); text-shadow: 0 0 5px #fff; }
+    
+    to { opacity: 1; transform: scale(1); text-shadow: 0 0 8px #fff, 0 0 15px #a569bd, 0 0 20px #a569bd; }
+    
+    }/* Conteneur et styles des vœux - Police Nunito */#wishesContainer {
+    
+    margin-top: 30px;
+    
+    position: relative;
+    
+    z-index: 1;
+    
+    }.wish {
+    
+    font-family: 'Nunito', sans-serif;
+    
+    font-size: 1.4em;
+    
+    line-height: 1.7;
+    
+    margin: 10px 0;
+    
+    opacity: 0;
+    
+    animation: fadeIn 1s ease-out forwards;
+    
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    
+    }@keyframes fadeIn {
+    
+    from { opacity: 0; transform: translateY(10px); }
+    
+    to { opacity: 1; transform: translateY(0); }
+    
+    }/* Conteneur et style Emoji */#emojiContainer {
+    
+    z-index: 1;
+    
+    }#kissEmoji {
+    
+    font-size: 10em;
+    
+    animation: bounce 1s ease-in-out infinite alternate;
+    
+    display: inline-block;
+    
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    
+    }@keyframes bounce {
+    
+    from { transform: translateY(0) scale(1); }
+    
+    to { transform: translateY(-15px) scale(1.05); }
+    
+    }/* Conteneur et style Cœur Final */#finalHeartContainer {
+    
+    z-index: 1;
+    
+    }#finalHeart {
+    
+    font-size: 1em;
+    
+    color: #a569bd;
+    
+    display: inline-block;
+    
+    transform-origin: center center;
+    
+    opacity: 0;
+    
+    animation: zoomInHeart 1.5s ease-out forwards;
+    
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    
+    }/* Animation de zoom du coeur (modifiée) */@keyframes zoomInHeart {
+    
+    from { font-size: 1em; opacity: 0; transform: scale(0.1); }
+    
+    to { font-size: 25em; opacity: 1; }
+    
+    }/* Animation de battement */@keyframes heartbeat {
+    
+    0%, 100% { transform: scale(1); }
+    
+    50% { transform: scale(1.1); }
+    
+    }/* Classe pour faire battre le coeur APRES le zoom */#finalHeart.beating {
+    
+    animation: zoomInHeart 1.5s ease-out forwards, heartbeat 1s ease-in-out 1.5s infinite;
+    
+    }/* Animation de fin (disparition) */.fade-out {
+    
+    animation: fadeOut 1s ease-out forwards;
+    
+    pointer-events: none;
+    
+    }@keyframes fadeOut {
+    
+    from { opacity: 1; }
+    
+    to { opacity: 0; visibility: hidden; }
+    
+    }/* Styles pour le Canvas de la fleur */#flowerCanvas {
+    
+    position: absolute;
+    
+    top: 50%;
+    
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    
+    z-index: 5;
+    
+    /* display: none; est géré par la classe .hidden */
+    
+    }/* Classe utilitaire pour cacher/montrer */.hidden {
+    
+    display: none;
+    
+    }/* Responsive */@media (max-width: 768px) {
+    
+    #mainMessage { font-size: 3em; }
+    
+    .wish { font-size: 1.1em; }
+    
+    #kissEmoji { font-size: 7em; }
+    
+    
+    
+    @keyframes zoomInHeartMobile {
+    
+    from { font-size: 1em; opacity: 0; transform: scale(0.1); }
+    
+    to { font-size: 15em; opacity: 1; }
+    
+    }
+    
+    #finalHeart { animation: zoomInHeartMobile 1.5s ease-out forwards; }
+    
+    #finalHeart.beating { animation: zoomInHeartMobile 1.5s ease-out forwards, heartbeat 1s ease-in-out 1.5s infinite; }
+    
+    
+    
+    #flowerCanvas { width: 250px; height: 250px; }
+    
+    }
